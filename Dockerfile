@@ -1,5 +1,5 @@
-FROM eclipse-temurin:19-jdk-alpine
+FROM openjdk
 WORKDIR /app
-COPY target/spring-boot-docker.jar spring-boot-docker.jar
 EXPOSE 8080
-CMD ["java","-jar","/spring-boot-docker.jar"]
+ADD target/spring-boot-docker.jar spring-boot-docker.jar
+ENTRYPOINT ["java","-jar","/spring-boot-docker.jar"]
